@@ -7,6 +7,9 @@ import { Injectable } from '@angular/core';
 export class GifsService {
   private apiKey: string = 'cHmxZ109D6hGo5rltOLpXg8XGOgOgGOS';
   private _history: string[] = [];
+  
+  //TODO cambiar any por su tipo correspondiente
+  public results: any[] = [];
 
   get history() {
     return [...this._history]; //spreed operator, rompe la referencia
@@ -23,10 +26,10 @@ export class GifsService {
 
     this.http
       .get(
-        'https://api.giphy.com/v1/stickers/search?api_key=cHmxZ109D6hGo5rltOLpXg8XGOgOgGOS&q=hola&limit=10'
+        `https://api.giphy.com/v1/stickers/search?api_key=cHmxZ109D6hGo5rltOLpXg8XGOgOgGOS&q=${query}&limit=10`
       )
       .subscribe((resp: any) => {
-        console.log(resp.data);
+        this.results = resp.data;
       }); //se ejecuta cuando tenga la resolución del get
     console.log(this._history);
   }
