@@ -2,7 +2,7 @@
     <h3 class="text-light">Gifs-App</h3>
     <hr class="text-light" />
     <div class="list-group list-reset">
-      <a href="#" class="list-group-item list-group-item-action" *ngFor="let item of history"> {{item | titlecase}} </a>
+      <a href="#" (click)="search(item)" class="list-group-item list-group-item-action" *ngFor="let item of history"> {{item | titlecase}} </a>
     </div>
     <!-- end listgroup -->
   </div>
