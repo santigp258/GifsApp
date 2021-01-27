@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-md-4 col-sm-6" *ngFor="let gif of results">
         <div class="card">
-            <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top">
+           <a [href]="gif.images.downsized_medium.url" target="_blank"> <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top"></a>
             <div class="card-body">
                 <p class="card-text">
                     {{gif.title}}

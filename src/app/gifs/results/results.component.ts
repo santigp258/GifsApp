@@ -7,7 +7,6 @@ import { GifsService } from '../services/gifs.service';
   styles: [],
 })
 export class ResultsComponent {
-
   get results(){
     return this.GifsService.results; //results del servicio
   }
